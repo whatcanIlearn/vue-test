@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+</head>
+<body>
+    <div id="app-2">
+        <span v-bind:title="message">
+          鼠标悬停此处几秒，
+          可以看到此处动态绑定的 title！
+          <br/>
+          a:{{childData.a}}
+          <br/>
+          b:{{childData.b}}
+          <br/>
+          c:{{childData.c}}
+        </span>
+        <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id">
+        </todo-item>
+        <com-comp v-bind:item-a='childData'></com-comp>
+        <div id="example">
+          <p>初始 message 是："{{ message }}"</p>
+          <p>计算后的翻转 message 是："{{ reversedMessage }}"</p>
+          <p>通过methods的方法计算后的翻转 message 是："{{ reversedMessageM() }}"</p>
+          <p>now："{{ now }}"</p>
+          <p>now："{{ nowM() }}"</p>
+        </div>
+        <button v-on:click="changeMessage">change</button>
+      </div>
+</body>
+<script src="asset/js/vue.js"></script>
+<script src="asset/js/main.js"></script>
+</html>
