@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>vue</title>
+    <style>
+        .color{color:red;}
+        .size{ font-size : 18px;}
+    </style>
 </head>
 <body>
     <div id="app-2">
@@ -31,7 +35,13 @@
           <p>now："{{ now }}"</p>
           <p>now："{{ nowM() }}"</p>
         </div>
+        <div>
+            全名：{{fullName}}
+            可变全名：{{changeFullName}}
+        </div>
         <button v-on:click="changeMessage">change</button>
+        <class-item></class-item>
+        <class-item></class-item>
       </div>
 </body>
 <script src="asset/js/vue.js"></script>
