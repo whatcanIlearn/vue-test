@@ -15,12 +15,10 @@
         <span v-bind:title="message">
           鼠标悬停此处几秒，
           可以看到此处动态绑定的 title！
-          <br/>
-          a:{{childData.a}}
-          <br/>
-          b:{{childData.b}}
-          <br/>
-          c:{{childData.c}}
+          <template v-for="(value, key) of childData">
+              <br/>
+              {{key}}:{{value}}
+          </template>
         </span>
         <todo-item
             v-for="item in groceryList"
@@ -42,8 +40,13 @@
         <button v-on:click="changeMessage">change</button>
         <class-item></class-item>
         <class-item></class-item>
+        <pie-item></pie-item>
+        <if-test-item></if-test-item>
+        <vfor-item></vfor-item>
       </div>
 </body>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 <script src="asset/js/vue.js"></script>
+<script src="asset/js/echarts.js"></script>
 <script src="asset/js/main.js"></script>
 </html>
